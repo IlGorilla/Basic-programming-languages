@@ -1,0 +1,97 @@
+un file batch è un file di testo che contiene una sequenza di comandi per l'interprete di comandi del sistema, solitamente command.com o cmd.exe.
+Esso può essere considerato un rudimentale linguaggio di scripting.
+I comandi utilizzabili sono tutti quelli disponibili per il prompt di sistema e si dividono in due categorie:
+-comandi interni, come cd per cambiare la cartella di lavoro o dir per elencarne il contenuto. Alcuni di essi sono specifici proprio per i file batch, avendo ben poco o nessun senso se utilizzati direttamente dal prompt dei comandi per un singolo comando.
+-comandi esterni, come format o chkdsk.
+
+REM = crea un commento
+ECHO = permette di stampare
+SET = permette di creare una variabile
+PAUSE = termina l esecuzione del programma cliccando un tasto 
+%CD% = Mostra la directory in cui mi trovo, è differente da %userprofile%
+%DATE% = mostra la data 
+%TIME% = mostra l orario 
+errorlevel = se l istruzione prima mi da errore allora eseguo il comando assegnato all errorlevel
+EXIST permette di cercare un file o directory e funziona come errorlevel, se esiste allora esegue il comando assegnato all errolevel (if exist lezione.bat ...allora ...)
+EQU = compara due numeri e vede se sono uguali 
+NEQ = compara due numeri e vede se sono diversi 
+CLS = pulisce lo schermo (consigliato per eliminare il codice stampato in eccesso che non ci serve piu)
+ASSOC = rinomina l estensione dei file
+
+
+-per stampare una variabile = echo %nome variabile%
+-@echo off non ti fa vedere la directory 
+-pause>nul non ti fa vedere "premi un tasto per annullare"
+-set/p variabile = l elemento0 della variabile lo inserisco io dal momento che set/p ti fa inserire un input da tastiera
+-ECHO %variabile% per stampare una variabile
+-ongi volta che uso e richiamo una variabile devo inserirla tra % % 
+-esiste solo il ciclo For, il while e il do while non esistono
+
+
+I comandi interni sono sempre disponibili senza accedere al disco perché integrati all'interno dell'interprete dei comandi.
+
+Ecco alcuni comandi interni:
+
+dir
+call
+chcp
+ren o rename
+del o erase
+type
+rem
+copy
+pause
+date
+time
+ver
+vol
+cd o chdir
+md o mkdir
+rd o rmdir
+break
+verify
+set
+prompt
+path
+exit
+echo
+goto
+shift
+if
+for
+cls
+lh o loadhigh
+
+Alcuni comandi interni introdotti con Windows 95:
+
+start
+lfnfor
+truename
+lock
+unlock
+
+I comandi esterni sono file di estensione .exe, .com o gli stessi file con estensione .bat o .cmd, che possono essere usati come comandi e chiamati (senza bisogno di scrivere l'estensione: scrivere diskcopy o diskcopy.com dà lo stesso risultato; esiste comunque una precedenza nel caso di file con nomi uguali ma estensioni diverse).
+
+Ecco alcuni comandi esterni:
+
+robocopy.exe
+diskcopy.com
+edit.com
+mode.com
+more.com
+sys.com
+attrib.exe
+chkdsk.exe
+debug.exe
+deltree.exe
+fc.exe
+find.exe
+label.exe
+mem.exe
+move.exe
+net.exe
+nlsfunc.exe
+shutdown.exe
+sort.exe
+subst.exe
+xcopy.exe
